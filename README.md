@@ -4,9 +4,9 @@ Chaque exercices est bien accompagner d'une vidéo explicative. Le lien est pré
 
 ## 03 Architecture technique : Typage statique
 
-<a href="">Lien vers l'exercice 03</a>
+<a href="/03-Architecture technique  typage statique/">Lien vers l'exercice 03</a>
 
-<a href="">Lien vers la vidéo 03</a>
+<a href="" target="_blank">Lien vers la vidéo 03</a>
 
 ### Consignes :
 
@@ -47,9 +47,9 @@ Veillez à choisir pour chacune de ces informations le type de données le plus 
 
 ## 07 Frameworks fullstack
 
-<a href="">Lien vers l'exercice 07</a>
+<a href="/07-Frameworks fullstack/">Lien vers l'exercice 07</a>
 
-<a href="">Lien vers la vidéo 07</a>
+<a href="" target="_blank">Lien vers la vidéo 07</a>
 
 ### Consignes :
 
@@ -72,9 +72,9 @@ produits.
 
 ## 14 Framework front
 
-<a href="">Lien vers l'exercice 14</a>
+<a href="/14-Framework front/">Lien vers l'exercice 14</a>
 
-<a href="">Lien vers la vidéo 14</a>
+<a href="" target="_blank">Lien vers la vidéo 14</a>
 
 ### Consignes :
 
@@ -93,7 +93,7 @@ Si vous devez faire les deux sujets, utilisez deux frameworks différents.
 
 <a href="/15-Budgétisation/">Lien vers l'exercice 15</a>
 
-<a href="https://youtu.be/M3URdBULgSI">Lien vers la vidéo 15</a>
+<a href="https://youtu.be/M3URdBULgSI" target="_blank">Lien vers la vidéo 15</a>
 
 ### Consignes :
 
