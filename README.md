@@ -91,9 +91,9 @@ Si vous devez faire les deux sujets, utilisez deux frameworks différents.
 
 ## 15 Budgétisation
 
-<a href="">Lien vers l'exercice 15</a>
+<a href="/15-Budgétisation/">Lien vers l'exercice 15</a>
 
-<a href="">Lien vers la vidéo 15</a>
+<a href="https://youtu.be/M3URdBULgSI">Lien vers la vidéo 15</a>
 
 ### Consignes :
 
