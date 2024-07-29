@@ -1,12 +1,17 @@
-<script setup>
-
-</script>
-
 <template>
-  <nav>
-    <router-link to="/">Products</router-link>
-  </nav>
+  <ProductsView />
 </template>
+
+<script>
+import ProductsView from './views/ProductsView.vue';
+
+export default {
+  name: 'App',
+  components: {
+    ProductsView
+  }
+}
+</script>
 
 <style scoped>
 
