@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" :slug="slug">
         <h2>{{ title }}</h2>
         <section>
             <div>
@@ -15,13 +15,14 @@
                     <li>Expiration Date: {{ expiarationDate }}</li>
                     <li>Added: {{ addDate }}</li>
                 </ul>
-                <ButtonAction :action="() => alert('Ongoing')" text="Delete Product"/>
+                <ButtonAction :action="deleteProduct" text="Delete"/>
             </div>
         </section>
     </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 import ButtonAction from './ButtonAction.vue';
 
 export default {
@@ -29,8 +30,18 @@ export default {
     components: {
         ButtonAction
     },
+    methods: {
+        ...mapMutations(['removeProduct']),
+        deleteProduct() {
+            this.removeProduct({ slug: this.slug });
+        }
+    },
     props: {
         title: {
+            type: String,
+            required: true
+        },
+        slug: {
             type: String,
             required: true
         },
@@ -72,6 +83,7 @@ export default {
 </script>
 
 <style scoped>
+
     .container {
         margin: 20px;
         display: flex;

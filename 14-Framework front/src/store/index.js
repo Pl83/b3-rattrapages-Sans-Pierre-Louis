@@ -72,6 +72,20 @@ export default createStore({
             expirationDate: '2022-12-31',
             addDate: '2021-01-01',
             category: 'Category 3'
+        },
+        {
+            id: 6,
+            title: 'Product 6',
+            slug: 'product-6',
+            description: 'This is the description of product 6',
+            price: 600,
+            quantity: 60,
+            stars: 0,
+            available: false,
+            imagePath: 'https://via.placeholder.com/150',
+            expirationDate: '2022-12-31',
+            addDate: '2021-01-01',
+            category: 'Category 3'
         }
     ]
   },
