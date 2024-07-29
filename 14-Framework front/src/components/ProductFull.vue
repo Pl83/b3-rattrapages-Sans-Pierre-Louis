@@ -1,5 +1,5 @@
 <template>
-    <div class="container" :slug="slug">
+    <div :class="'container product ' + category" :slug="slug">
         <h2>{{ title }}</h2>
         <section>
             <div>
@@ -74,6 +74,10 @@ export default {
             required: true
         },
         addDate: {
+            type: String,
+            required: true
+        },
+        category: {
             type: String,
             required: true
         }
