@@ -1,6 +1,7 @@
 <template>
+    <ButtonAction @click="showForm" text="Add a product"/>
     <div class="box">
-        <form action="">
+        <div class="form">
             <fieldset>
                 <legend> Add a product : </legend>
 
@@ -11,30 +12,98 @@
                 <label for="price">Price :</label>
                 <input type="number" id="price" name="price" required><br><br>
                 <label for="quantity">Quantity :</label>
-                <input type="number" id="quantity" name="quantity" required><br><br>
+                <input type="number" id="quantity" name="quantity" required min="0"><br><br>
                 <label for="stars">Stars :</label>
-                <input type="number" id="stars" name="stars" required><br><br>
+                <input type="number" id="stars" name="stars" required max="5" min="0"><br><br>
                 <label for="available">Available :</label>
                 <input type="checkbox" id="available" name="available" required><br><br>
                 <label for="imagePath">Image Path :</label>
                 <input type="text" id="imagePath" name="imagePath" required><br><br>
                 <label for="expirationDate">Expiration Date :</label>
                 <input type="date" id="expirationDate" name="expirationDate" required><br><br>
-                <button type="submit">Submit</button>
+                <label for="category">Category :</label>
+                <select id="category" name="category" required>
+                    <option value="1">Category 1</option>
+                    <option value="2">Category 2</option>
+                    <option value="3">Category 3</option>
+                </select><br><br>
+                <ButtonAction @click="addProducts" text="Validate"/>
             </fieldset>
-        </form>
+        </div>
     </div>
-    <div class="overlay"></div>
+    <div @click="hideForm" class="overlay"></div>
 </template>
 
 <script>
+import ButtonAction from './ButtonAction.vue';
+
 export default {
     name: 'ProductForm',
+    components: {
+        ButtonAction
+    },
+    methods: {
+        hideForm() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.querySelector('.box').style.display = 'none';
+        },
+        showForm() {
+            document.querySelector('.overlay').style.display = 'block';
+            document.querySelector('.box').style.display = 'block';
+        },
+        addProducts() {
+            let title = document.getElementById('title').value;
+            let slug = title.toLowerCase().replace(/ /g, '-');
+            let content = document.getElementById('content').value;
+            let price = document.getElementById('price').value;
+            let quantity = document.getElementById('quantity').value;
+            let stars = document.getElementById('stars').value;
+            let available = document.getElementById('available').checked;
+            let imagePath = document.getElementById('imagePath').value;
+            let expirationDate = document.getElementById('expirationDate').value;
+            let addDate = new Date().toISOString();
+            addDate = addDate.slice(0, 10);
+            let category = document.getElementById('category').value;
+
+            if (!title || !content || !price || !quantity || !stars || !imagePath || !expirationDate) {
+                alert('Please fill all the fields');
+                return;
+            }
+
+            if (isNaN(price) || isNaN(quantity) || isNaN(stars)) {
+                alert('Price, quantity and stars must be numbers');
+                return;
+            }
+            
+            if (price <= 0 || quantity <= 0 || stars < 0 || stars > 5) {
+                alert('Price and quantity must be positive numbers and stars must be between 0 and 5');
+                return;
+            }
+
+            this.$store.commit('addProduct', {
+                title: title,
+                slug: slug,
+                description: content,
+                price: price,
+                quantity: quantity,
+                stars: stars,
+                available: available,
+                imagePath: imagePath,
+                expirationDate: expirationDate,
+                addDate: addDate,
+                category: category
+            });
+
+            this.hideForm();
+        }
+    },
+    
 }
 </script>
 
 <style scoped>
     .overlay {
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -45,6 +114,7 @@ export default {
     }
 
     .box {
+        display: none;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -52,9 +122,10 @@ export default {
         background-color: white;
         padding: 20px;
         z-index: 2;
+        border-radius: 10px;
     }
 
-    form {
+    .form {
         display: flex;
         flex-direction: column;
     }
@@ -74,6 +145,7 @@ export default {
     label {
         font-size: 16px;
         font-weight: bold;
+        margin: 10px;
     }
 
     input {

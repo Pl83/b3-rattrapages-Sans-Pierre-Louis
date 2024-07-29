@@ -4,7 +4,6 @@ export default createStore({
   state: {
     Products: [
         {
-            id: 1,
             title: 'Product 1',
             slug: 'product-1',
             description: 'This is the description of product 1',
@@ -18,7 +17,6 @@ export default createStore({
             category: 'Category 1'
         },
         {
-            id: 2,
             title: 'Product 2',
             slug: 'product-2',
             description: 'This is the description of product 2',
@@ -32,7 +30,6 @@ export default createStore({
             category: 'Category 1'
         },
         {
-            id: 3,
             title: 'Product 3',
             slug: 'product-3',
             description: 'This is the description of product 3',
@@ -46,7 +43,6 @@ export default createStore({
             category: 'Category 2'
         },
         {
-            id: 4,
             title: 'Product 4',
             slug: 'product-4',
             description: 'This is the description of product 4',
@@ -60,7 +56,6 @@ export default createStore({
             category: 'Category 2'
         },
         {
-            id: 5,
             title: 'Product 5',
             slug: 'product-5',
             description: 'This is the description of product 5',
@@ -74,7 +69,6 @@ export default createStore({
             category: 'Category 3'
         },
         {
-            id: 6,
             title: 'Product 6',
             slug: 'product-6',
             description: 'This is the description of product 6',

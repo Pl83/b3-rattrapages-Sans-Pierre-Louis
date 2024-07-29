@@ -6,13 +6,13 @@
             <input type="text" placeholder="Filter products">
         </div>
         <div>
-            <ButtonAction :action="addProducts" text="Add a product"/>
+            <ProductForm/>
         </div>
     </section>
     <div class="bigContainer">
-        <ProductFull v-for="product in Products" :key="product.id" :title="product.title" :slug="product.slug" :content="product.content" :price="product.price" :quantity="product.quantity" :stars="product.stars" :available="product.available" :imagePath="product.imagePath" :expiarationDate="product.expirationDate" :addDate="product.addDate"/>
+        <ProductFull v-for="product in Products" :key="product.slug" :title="product.title" :slug="product.slug" :content="product.content" :price="product.price" :quantity="product.quantity" :stars="product.stars" :available="product.available" :imagePath="product.imagePath" :expiarationDate="product.expirationDate" :addDate="product.addDate"/>
     </div>
-
+    
 </template>
 
 <script>
@@ -24,7 +24,8 @@ export default {
     name: 'ProductsView',
     components: {
         ProductFull,
-        ButtonAction
+        ButtonAction,
+        ProductForm
     },
     computed: {
         Products() {
