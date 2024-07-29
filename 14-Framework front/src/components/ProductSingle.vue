@@ -1,6 +1,7 @@
 <template>
     <div class="container product">
         <h2>{{ title }}</h2>
+        <input type="hidden" id="slug" name="slug" :value="slug">
         <section>
             <div>
                 <img :src="imagePath" :alt="'image of ' + title">
@@ -9,10 +10,11 @@
                 <ul>
                     <li>{{ content }}</li>
                     <li>{{ price }} $</li>
-                    <li>{{ quantity }} left in stock</li>
-                    <li>{{ stars }}/5</li>
-                    <li>{{ available ? 'In Stock' : 'Out of Stock' }}</li>
-                    <li>Expiration Date: {{ expiarationDate }}</li>
+                    <li>In Stock: <input type="number" id="quantity" name="quantity" min="0" :placeholder="quantity"></li>
+                    <ButtonAction @click="changeQuantity" text="Change Quantity"/>
+                    <li>Rated: <input type="number" id="stars" name="stars" max="5" min="0" :placeholder="stars">/5</li>
+                    <ButtonAction @click="changeStars" text="Change Stars"/>
+                    <li>Expiration Date: {{ expirationDate }}</li>
                     <li>Added: {{ addDate }}</li>
                 </ul>
             </div>
@@ -23,7 +25,6 @@
 <script>
 import { mapMutations } from 'vuex';
 import ButtonAction from './ButtonAction.vue';
-import { RouterLink } from 'vue-router';
 
 export default {
     name: 'ProductFull',
@@ -31,10 +32,36 @@ export default {
         ButtonAction
     },
     methods: {
+        ...mapMutations(['updateQuantity', 'updateStars']),
+        changeStars() {
 
+            let stars = document.getElementById('stars').value;
+
+            if (stars < 0 || stars > 5) {
+                alert('Stars must be between 0 and 5');
+                return;
+            }
+
+            this.updateStars({ Slug: document.getElementById('slug').value, stars: stars });
+        },
+        changeQuantity() {
+
+            let quantity = document.getElementById('quantity').value;
+
+            if (quantity.toString().includes('-')) {
+                alert("Quantity can't be negative");
+                return;
+            }
+
+            this.updateQuantity({ Slug: document.getElementById('slug').value, quantity: quantity });
+        }
     },
     props: {
         title: {
+            type: String,
+            required: true
+        },
+        slug: {
             type: String,
             required: true
         },
@@ -54,15 +81,11 @@ export default {
             type: Number,
             required: true
         },
-        available: {
-            type: Boolean,
-            required: true
-        },
         imagePath: {
             type: String,
             required: false
         },
-        expiarationDate: {
+        expirationDate: {
             type: String,
             required: true
         },
@@ -106,6 +129,10 @@ export default {
         justify-content: space-between;
     }
 
+    input {
+        width: 40px;
+    }
+
     img {
         width: 200px;
         height: 200px;
@@ -119,14 +146,14 @@ export default {
         margin: 10px 0;
     }
 
-    .greetings h1,
-    .greetings h3 {
+    h1,
+    h3 {
         text-align: center;
     }
 
     @media (min-width: 1024px) {
-        .greetings h1,
-        .greetings h3 {
+        h1,
+        h3 {
             text-align: left;
         }
     }

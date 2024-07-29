@@ -8,9 +8,8 @@
             <div>   
                 <ul>
                     <li>{{ price }} $</li>
-                    <li>{{ quantity }} left in stock</li>
-                    <li>{{ stars }}/5</li>
-                    <li>{{ available ? 'In Stock' : 'Out of Stock' }}</li>
+                    <li>Rated: {{ stars }}/5</li>
+                    <li>{{ available ? `Available (${quantity} left)` : 'Out of Stock' }}</li>
                     <li>Expiration Date: {{ expiarationDate }}</li>
                     <li>Added: {{ addDate }}</li>
                     <li><router-link :to="'/product/:'+slug">See more...</router-link></li>

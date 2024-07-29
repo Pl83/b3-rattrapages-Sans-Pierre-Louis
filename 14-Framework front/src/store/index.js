@@ -21,7 +21,7 @@ export default createStore({
             slug: 'product-2',
             description: 'This is the description of product 2',
             price: 200,
-            quantity: 20,
+            quantity: 0,
             stars: 3,
             available: false,
             imagePath: 'https://via.placeholder.com/150',
@@ -47,7 +47,7 @@ export default createStore({
             slug: 'product-4',
             description: 'This is the description of product 4',
             price: 400,
-            quantity: 40,
+            quantity: 0,
             stars: 2,
             available: false,
             imagePath: 'https://via.placeholder.com/150',
@@ -73,7 +73,7 @@ export default createStore({
             slug: 'product-6',
             description: 'This is the description of product 6',
             price: 600,
-            quantity: 60,
+            quantity: 0,
             stars: 0,
             available: false,
             imagePath: 'https://via.placeholder.com/150',
@@ -92,8 +92,8 @@ export default createStore({
         removeProduct(state, product) {
             state.Products = state.Products.filter(p => p.slug !== product.slug);
         },
-        updateQuantity(state, { product, quantity }) {
-            const index = state.Products.findIndex(p => p.slug === product.slug);
+        updateQuantity(state, { Slug, quantity }) {
+            const index = state.Products.findIndex(p => p.slug === Slug);
             if (typeof quantity !== 'number') {
                 quantity = parseInt(quantity);
             };
@@ -104,8 +104,8 @@ export default createStore({
                 state.Products[index].available = true;
             };
         },
-        updateStars(state, { product, stars }) {
-            const index = state.Products.findIndex(p => p.slug === product.slug);
+        updateStars(state, { Slug, stars }) {
+            const index = state.Products.findIndex(p => p.slug === Slug);
             if (typeof stars !== 'number') {
                 stars = parseInt(stars);
             };
