@@ -15,7 +15,7 @@
         </div>
     </section>
     <div class="bigContainer">
-        <ProductFull v-for="product in Products" :key="product.slug" :title="product.title" :category="product.category" :slug="product.slug" :content="product.content" :price="product.price" :quantity="product.quantity" :stars="product.stars" :available="product.available" :imagePath="product.imagePath" :expiarationDate="product.expirationDate" :addDate="product.addDate"/>
+        <ProductFull v-for="product in Products" :key="product.slug" :title="product.title" :category="product.category" :slug="product.slug" :price="product.price" :quantity="product.quantity" :stars="product.stars" :available="product.available" :imagePath="product.imagePath" :expiarationDate="product.expirationDate" :addDate="product.addDate"/>
     </div>
     
 </template>

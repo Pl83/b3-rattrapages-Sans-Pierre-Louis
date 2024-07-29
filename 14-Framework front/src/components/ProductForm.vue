@@ -23,6 +23,7 @@
                 <input type="date" id="expirationDate" name="expirationDate" required><br><br>
                 <label for="category">Category :</label>
                 <select id="category" name="category" required>
+                    <option value="0"></option>
                     <option value="1">Category 1</option>
                     <option value="2">Category 2</option>
                     <option value="3">Category 3</option>
@@ -75,8 +76,8 @@ export default {
                 return;
             }
             
-            if (price <= 0 || quantity <= 0 || stars < 0 || stars > 5) {
-                alert('Price and quantity must be positive numbers and stars must be between 0 and 5');
+            if (price > 0 && quantity >= 0 && stars >= 0 && stars <= 5) {
+                alert('Price must be greater than 0, qunatity must be equal or greater than 0 and stars must be between 0 and 5');
                 return;
             }
 

@@ -1,5 +1,5 @@
 <template>
-    <div :class="'container product ' + category" :slug="slug">
+    <div class="container product">
         <h2>{{ title }}</h2>
         <section>
             <div>
@@ -7,15 +7,14 @@
             </div>
             <div>   
                 <ul>
+                    <li>{{ content }}</li>
                     <li>{{ price }} $</li>
                     <li>{{ quantity }} left in stock</li>
                     <li>{{ stars }}/5</li>
                     <li>{{ available ? 'In Stock' : 'Out of Stock' }}</li>
                     <li>Expiration Date: {{ expiarationDate }}</li>
                     <li>Added: {{ addDate }}</li>
-                    <li><router-link :to="'/product/:'+slug">See more...</router-link></li>
                 </ul>
-                <ButtonAction :action="deleteProduct" text="Delete"/>
             </div>
         </section>
     </div>
@@ -32,17 +31,14 @@ export default {
         ButtonAction
     },
     methods: {
-        ...mapMutations(['removeProduct']),
-        deleteProduct() {
-            this.removeProduct({ slug: this.slug });
-        }
+
     },
     props: {
         title: {
             type: String,
             required: true
         },
-        slug: {
+        content: {
             type: String,
             required: true
         },
@@ -71,10 +67,6 @@ export default {
             required: true
         },
         addDate: {
-            type: String,
-            required: true
-        },
-        category: {
             type: String,
             required: true
         }

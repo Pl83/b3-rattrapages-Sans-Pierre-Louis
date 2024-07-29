@@ -1,18 +1,14 @@
 <template>
-  <ProductsView />
+  <router-view />
 </template>
 
 <script>
-import ProductsView from './views/ProductsView.vue';
-
 export default {
   name: 'App',
-  components: {
-    ProductsView
-  }
 }
 </script>
 
 <style scoped>
-
+/* Add your styles here */
 </style>
+
