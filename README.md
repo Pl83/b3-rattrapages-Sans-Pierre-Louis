@@ -74,7 +74,9 @@ produits.
 
 <a href="/14-Framework front/">Lien vers l'exercice 14</a>
 
-<a href="" target="_blank">Lien vers la vidéo 14</a>
+<a href="https://youtu.be/D0lci9vSPRg" target="_blank">Lien vers la vidéo 14 (partie 1)</a>
+
+<a href="https://youtu.be/fPpKb3eObek" target="_blank">Lien vers la vidéo 14 (partie 2)</a>
 
 ### Consignes :
 
