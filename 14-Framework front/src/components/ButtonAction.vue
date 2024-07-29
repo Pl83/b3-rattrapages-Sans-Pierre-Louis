@@ -29,6 +29,7 @@ export default {
         display: inline-block;
         font-size: 16px;
         transition: ease-in-out 0.2s;
+        border-radius: 5px;
     }
 
     button:hover {

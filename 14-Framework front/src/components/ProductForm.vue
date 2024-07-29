@@ -88,6 +88,8 @@ export default {
 
             if (quantity == 0) {
                 available = false;
+            } else {
+                available = true;
             }
 
             if (stars < 0 || stars > 5) {

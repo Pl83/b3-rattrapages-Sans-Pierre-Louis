@@ -11,7 +11,7 @@ export default createStore({
             quantity: 10,
             stars: 4,
             available: true,
-            imagePath: 'https://via.placeholder.com/150',
+            imagePath: 'https://via.placeholder.com/200',
             expirationDate: '2022-12-31',
             addDate: '2021-01-01',
             category: 'Category 1'
@@ -24,7 +24,7 @@ export default createStore({
             quantity: 0,
             stars: 3,
             available: false,
-            imagePath: 'https://via.placeholder.com/150',
+            imagePath: 'https://via.placeholder.com/200',
             expirationDate: '2022-12-31',
             addDate: '2021-01-01',
             category: 'Category 1'
@@ -37,7 +37,7 @@ export default createStore({
             quantity: 30,
             stars: 5,
             available: true,
-            imagePath: 'https://via.placeholder.com/150',
+            imagePath: 'https://via.placeholder.com/200',
             expirationDate: '2022-12-31',
             addDate: '2021-01-01',
             category: 'Category 2'
@@ -50,7 +50,7 @@ export default createStore({
             quantity: 0,
             stars: 2,
             available: false,
-            imagePath: 'https://via.placeholder.com/150',
+            imagePath: 'https://via.placeholder.com/200',
             expirationDate: '2022-12-31',
             addDate: '2021-01-01',
             category: 'Category 2'
@@ -63,7 +63,7 @@ export default createStore({
             quantity: 50,
             stars: 1,
             available: true,
-            imagePath: 'https://via.placeholder.com/150',
+            imagePath: 'https://via.placeholder.com/200',
             expirationDate: '2022-12-31',
             addDate: '2021-01-01',
             category: 'Category 3'
@@ -76,7 +76,7 @@ export default createStore({
             quantity: 0,
             stars: 0,
             available: false,
-            imagePath: 'https://via.placeholder.com/150',
+            imagePath: 'https://via.placeholder.com/200',
             expirationDate: '2022-12-31',
             addDate: '2021-01-01',
             category: 'Category 3'

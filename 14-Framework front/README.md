@@ -12,6 +12,8 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+Make sure you are in the folder containing the exercice 14 and not the global folder. The in your terminal :
+
 ```sh
 npm install
 ```
@@ -27,3 +29,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Description du projet 
+
+Sur la page principale on retrouve tous les produits. Il est possible de les filters par catégories. On affiche si le produit et disponible, si oui en combien d'exemplaires. On peut aussi créer ou supprimer un produit. Lors de la création d'un produit on remplit automatiquement la date de création et le slug. De plus on s'assure de la cohérence entre le stock et la disponibilité. On effectuait aussi les vérifications classiques. On peut voir un produit en détail sur une page produit simple. L'URL est dynamique et varie en fonction du produit. Sur la page produit simple on peut changer la quantité disponible et la note. La disponibilité est automatiquement ajustée.

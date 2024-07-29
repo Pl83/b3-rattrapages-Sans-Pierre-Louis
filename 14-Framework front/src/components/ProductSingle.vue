@@ -8,8 +8,8 @@
             </div>
             <div>   
                 <ul>
-                    <li>{{ content }}</li>
-                    <li>{{ price }} $</li>
+                    <li>About our product: {{ content }}</li>
+                    <li>Cost: {{ price }} $</li>
                     <li>In Stock: <input type="number" id="quantity" name="quantity" min="0" :placeholder="quantity"></li>
                     <ButtonAction @click="changeQuantity" text="Change Quantity"/>
                     <li>Rated: <input type="number" id="stars" name="stars" max="5" min="0" :placeholder="stars">/5</li>

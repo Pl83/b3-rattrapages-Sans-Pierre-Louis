@@ -3,11 +3,11 @@
         <h2>{{ title }}</h2>
         <section>
             <div>
-                <img :src="imagePath" :alt="'image of ' + title">
+                <img :src="imagePath" :alt="'image of ' + title" loading="lazy">
             </div>
             <div>   
                 <ul>
-                    <li>{{ price }} $</li>
+                    <li>Cost:{{ price }} $</li>
                     <li>Rated: {{ stars }}/5</li>
                     <li>{{ available ? `Available (${quantity} left)` : 'Out of Stock' }}</li>
                     <li>Expiration Date: {{ expiarationDate }}</li>
