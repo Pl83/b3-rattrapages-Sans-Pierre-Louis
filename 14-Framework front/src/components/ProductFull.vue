@@ -15,14 +15,20 @@
                     <li>Expiration Date: {{ expiarationDate }}</li>
                     <li>Added: {{ addDate }}</li>
                 </ul>
+                <ButtonAction :action="() => alert('Ongoing')" text="Delete Product"/>
             </div>
         </section>
     </div>
 </template>
 
 <script>
+import ButtonAction from './ButtonAction.vue';
+
 export default {
     name: 'ProductFull',
+    components: {
+        ButtonAction
+    },
     props: {
         title: {
             type: String,
@@ -75,6 +81,12 @@ export default {
         border-radius: 10px;
         padding: 10px 15px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: fit-content;
+    }
+
+    .container:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
 
     h2 {
