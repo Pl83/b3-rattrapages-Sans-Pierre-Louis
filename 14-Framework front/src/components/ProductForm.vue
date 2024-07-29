@@ -76,8 +76,22 @@ export default {
                 return;
             }
             
-            if (price > 0 && quantity >= 0 && stars >= 0 && stars <= 5) {
-                alert('Price must be greater than 0, qunatity must be equal or greater than 0 and stars must be between 0 and 5');
+            if (price < 0) {
+                alert('Price must be greater than 0');
+                return;
+            }
+
+            if (quantity.toString().includes('-')) {
+                alert("Quantity can't be negative");
+                return;
+            }
+
+            if (quantity == 0) {
+                available = false;
+            }
+
+            if (stars < 0 || stars > 5) {
+                alert('Stars must be between 0 and 5');
                 return;
             }
 
