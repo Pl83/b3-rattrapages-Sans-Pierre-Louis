@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Inertia\Inertia;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        return view('Product');
+        $products = Product::all();
+
+        return Inertia::render('Products/Index', [
+            'products' => $products,
+        ]);
     }
 }
