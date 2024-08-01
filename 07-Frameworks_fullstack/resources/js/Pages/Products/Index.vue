@@ -1,4 +1,5 @@
 <template>
+    <NavBar />
     <h1>All our Products</h1>
     <section>  
         <ProductShort v-for="product in products" :key="product.uuid" :product="product" />
@@ -7,11 +8,13 @@
 
 <script>
 import ProductShort from '@/Components/ProductShort.vue'
+import NavBar from '@/Components/NavBar.vue'
 
 export default {
     name: 'Products',
     components: {
-        ProductShort
+        ProductShort,
+        NavBar
     },
     props: {
         products: Array

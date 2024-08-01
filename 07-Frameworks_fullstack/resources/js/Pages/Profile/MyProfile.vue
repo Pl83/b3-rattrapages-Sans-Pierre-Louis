@@ -1,4 +1,5 @@
 <template>
+    <NavBar />
     <h1>My profile</h1>
     <ProfileUser :user="user" />
     <h2>My purchase history</h2>
@@ -8,12 +9,14 @@
 <script>
 import ProfileUser from '@/Components/ProfileUser.vue'
 import ProfilePurchase from '@/Components/ProfilePurchase.vue'
+import NavBar from '@/Components/NavBar.vue'
 
 export default {
     name: 'MyProfile',
     components: {
         ProfileUser,
-        ProfilePurchase
+        ProfilePurchase,
+        NavBar
     },
     props: {
         user: Object

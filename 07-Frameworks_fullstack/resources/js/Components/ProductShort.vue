@@ -4,7 +4,8 @@
         <div>
             <h2>{{ product.name }}</h2>
             <p>{{ product.price }} $</p>
-            <button>See more...</button>
+            <button v-if="product.available" @click="addToCart(product)">Add to cart</button>
+            <button v-else class="disable">Unavailable</button>
         </div>
     </div>
 </template>
@@ -14,6 +15,14 @@ export default {
     name: 'ProductShort',
     props: {
         product: Array
+    },
+    methods: {
+        addToCart(product) {
+            // add the product to the cart in the local storage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
     }
 }
 </script>
@@ -56,5 +65,10 @@ export default {
 }
 .container button:hover {
     background-color: #0056b3;
+}
+
+.container button.disable {
+    background-color: #6c757d;
+    cursor: not-allowed;
 }
 </style>
