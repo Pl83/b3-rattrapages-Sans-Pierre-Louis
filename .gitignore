@@ -3,6 +3,8 @@
 */.DS_Store
 */node_modules
 */dist
+*/vendor
+*/.env
 
 logs
 *.log

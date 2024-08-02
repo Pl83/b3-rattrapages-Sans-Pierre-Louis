@@ -47,7 +47,7 @@ Veillez à choisir pour chacune de ces informations le type de données le plus 
 
 ## 07 Frameworks fullstack
 
-<a href="/07-Frameworks fullstack/">Lien vers l'exercice 07</a>
+<a href="/07-Frameworks_fullstack/">Lien vers l'exercice 07</a>
 
 <a href="" target="_blank">Lien vers la vidéo 07</a>
 
