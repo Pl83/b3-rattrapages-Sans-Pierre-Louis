@@ -55,7 +55,40 @@ export default {
             overlay.style.display = 'none';
             let form = document.getElementById('fy');
             form.style.display = 'none';
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length > 0) {
+
+                fetch('/validate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(cart)
+                }).then(response => {
+                    console.log(response);
+                    if (response.ok) {
+                        alert('Purchase successful');
+                    } else {
+                        alert('Purchase successful but not saved in the database');
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+
+                cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } else {
+                alert('Cart is empty');
+            }
         }
+    },
+    mounted() {
+        let overlay = document.querySelector('.overlay');
+        overlay.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            let form = document.getElementById('fy');
+            form.style.display = 'none';
+        });
     }
 }
 </script>

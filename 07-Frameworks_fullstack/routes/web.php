@@ -19,4 +19,4 @@ Route::middleware([
     Route::get('/profile', [UserController::class, 'index']);
 });
 
-Route::put('/', [ProductController::class, 'buy'])->name('products.buy');
+Route::post('/validate', [ProductController::class, 'buy']);

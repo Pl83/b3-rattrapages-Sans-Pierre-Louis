@@ -18,6 +18,9 @@ export default {
     },
     methods: {
         buy(product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
         let overlay = document.querySelector('.overlay');
         overlay.style.display = 'block';
         let form = document.getElementById('fy');
