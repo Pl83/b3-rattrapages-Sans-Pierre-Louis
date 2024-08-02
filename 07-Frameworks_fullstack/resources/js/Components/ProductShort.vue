@@ -4,7 +4,7 @@
         <div>
             <h2>{{ product.name }}</h2>
             <p>{{ product.price }} $</p>
-            <button v-if="product.available" @click="addToCart(product)">Buy</button>
+            <button v-if="product.available" @click="buy(product)">Buy</button>
             <button v-else class="disable">Unavailable</button>
         </div>
     </div>
@@ -17,18 +17,15 @@ export default {
         product: Array
     },
     methods: {
-        addToCart(product) {
-            console.log('Add to cart', product)
-            let cart = JSON.parse(localStorage.getItem('cart')) || []
-            cart.push(product)
-            localStorage.setItem('cart', JSON.stringify(cart))
-            window.location.href = '/cart'
+        buy(product) {
+            
         }
     }
 }
 </script>
   
 <style scoped>
+
 .container {
     display: flex;
     justify-content: space-between;

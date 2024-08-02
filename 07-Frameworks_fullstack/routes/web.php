@@ -18,3 +18,5 @@ Route::middleware([
 ])->group(function () {
     Route::get('/profile', [UserController::class, 'index']);
 });
+
+Route::put('/', [ProductController::class, 'buy'])->name('products.buy');

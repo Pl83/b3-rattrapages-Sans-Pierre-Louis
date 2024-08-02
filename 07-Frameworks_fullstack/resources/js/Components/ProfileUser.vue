@@ -1,6 +1,7 @@
 <template>
     <section>
         <h2>{{ user.name }}</h2>
+        <h1>{{ user }}</h1>
         <div>
             <img :src="user.profile_photo_url" alt="profile image">
             <p>Email: {{ user.email }}</p>

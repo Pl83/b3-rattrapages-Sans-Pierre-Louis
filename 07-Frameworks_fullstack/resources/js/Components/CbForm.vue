@@ -20,15 +20,15 @@
         <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
+    <div class="overlay"></div>
 </template>
 
 <script>
-import { isValid, isExpirationDateValid, isSecurityCodeValid, getCreditCardNameByNumber } from 'creditcard.js';
+import { isValid, isExpirationDateValid, isSecurityCodeValid } from 'creditcard.js';
 export default {
     name: 'CbForm',
     methods: {
         submitForm() {
-            const name = document.getElementById('name').value;
             const cardNumber = document.getElementById('cardNumber').value;
             const expiry = document.getElementById('expiry').value;
             const cvv = document.getElementById('cvv').value;
@@ -55,29 +55,28 @@ export default {
 </script>
 
 <style scoped>
-    .form-group {
-        margin-bottom: 1rem;
-    }
-    label {
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-    input {
-        width: 100%;
-        padding: 0.5rem;
-        font-size: 1rem;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-    }
-    button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 0.25rem;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #0056b3;
-    }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    z-index: 3;
+}
+
+.form-group {
+    margin: 1rem 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    z-index: 2;
+}
+
 </style>

@@ -15,4 +15,12 @@ class ProductController extends Controller
             'products' => $products,
         ]);
     }
+
+    public function buy(Product $product)
+    {
+        $user = auth()->user();
+        $product->users()->attach($user->id);
+
+        return redirect()->route('products.index');
+    }
 }
