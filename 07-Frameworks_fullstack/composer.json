@@ -8,6 +8,7 @@
         "php": "^8.2",
         "inertiajs/inertia-laravel": "^1.0",
         "knuckleswtf/scribe": "^4.37",
+        "laravel-validation-rules/credit-card": "^1.9",
         "laravel/framework": "^11.9",
         "laravel/jetstream": "^5.1",
         "laravel/sanctum": "^4.0",

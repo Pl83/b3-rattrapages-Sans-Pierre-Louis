@@ -19,4 +19,9 @@ class Product extends Model
         'image',
         'category',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

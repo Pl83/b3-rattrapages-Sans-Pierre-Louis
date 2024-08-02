@@ -19,6 +19,7 @@
         "vue": "^3.3.13"
     },
     "dependencies": {
+        "creditcard.js": "^3.0.33",
         "eslint": "^9.8.0"
     }
 }
