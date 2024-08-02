@@ -18,7 +18,10 @@ export default {
     },
     methods: {
         buy(product) {
-            
+        let overlay = document.querySelector('.overlay');
+        overlay.style.display = 'block';
+        let form = document.getElementById('fy');
+        form.style.display = 'flex'; 
         }
     }
 }

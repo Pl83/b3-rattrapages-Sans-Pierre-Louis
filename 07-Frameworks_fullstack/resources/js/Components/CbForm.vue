@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="submitForm">
+    <form id="fy" @submit.prevent="submitForm">
 
         <div class="form-group">
             <label for="name">Name</label>
@@ -31,6 +31,8 @@ export default {
         submitForm() {
             const cardNumber = document.getElementById('cardNumber').value;
             const expiry = document.getElementById('expiry').value;
+            const month = expiry.split('/')[0];
+            const year = expiry.split('/')[1];
             const cvv = document.getElementById('cvv').value;
 
             if (!isValid(cardNumber)) {
@@ -38,7 +40,7 @@ export default {
                 return;
             }
 
-            if (!isExpirationDateValid(expiry)) {
+            if (!isExpirationDateValid(month, year)) {
                 alert('Invalid expiry date');
                 return;
             }
@@ -49,23 +51,54 @@ export default {
             }
 
             alert('Payment successful');
+            let overlay = document.querySelector('.overlay');
+            overlay.style.display = 'none';
+            let form = document.getElementById('fy');
+            form.style.display = 'none';
         }
     }
 }
 </script>
 
 <style scoped>
-form {
-    display: flex;
+#fy {
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0;
-    z-index: 3;
+    padding: 1rem;
+    z-index: 10;
+    background-color: white;
 }
 
+
 .form-group {
+    display: flex;
+    flex-direction: column;
     margin: 1rem 0;
+}
+
+.form-group label {
+    margin: 0.5rem 0;
+}
+
+.form-control {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
 }
 
 .overlay {
@@ -75,7 +108,7 @@ form {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: block;
+    display: none;
     z-index: 2;
 }
 

@@ -1,6 +1,7 @@
 <template>
     <NavBar />
     <h1>All our Products</h1>
+    <CbForm />
     <section>  
         <ProductShort v-for="product in products" :key="product.uuid" :product="product" />
     </section>
@@ -9,12 +10,14 @@
 <script>
 import ProductShort from '@/Components/ProductShort.vue'
 import NavBar from '@/Components/NavBar.vue'
+import CbForm from '@/Components/CbForm.vue';
 
 export default {
     name: 'Products',
     components: {
         ProductShort,
-        NavBar
+        NavBar,
+        CbForm
     },
     props: {
         products: Array
