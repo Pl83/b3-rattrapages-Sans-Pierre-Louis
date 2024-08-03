@@ -1,10 +1,9 @@
-import LocalStorage from "./LocalStorage";
-import Product from "./Product";
-
+import LocalStorage from "./LocalStorage.js";
+import Product from "./Product.js";
 try {
     localStorage.getItem('products');
     console.log('localStorage not empty');
-    if(!localStorage.getItem('products')) {
+    if (!localStorage.getItem('products')) {
         console.log('localStorage empty');
         localStorage.setItem('products', JSON.stringify([]));
         let product1 = new Product('product1', 'description1', 100, 10, 5, true, 'image1', new Date(), new Date());
@@ -13,19 +12,18 @@ try {
         console.log(product2);
         let product3 = new Product('product3', 'description3', 300, 30, 3, true, 'image3', new Date(), new Date());
         console.log(product3);
-
         product1.createProduct();
         product2.createProduct();
         product3.createProduct();
     }
-} catch (e) {
+}
+catch (e) {
     console.error(e);
 }
-
-function displayProducts(array : any) {
-    const container = (<HTMLInputElement>document.getElementById('productsList'));
-    let content : string = '';
-    array.forEach((product:Product) => {
+function displayProducts(array) {
+    const container = document.getElementById('productsList');
+    let content = '';
+    array.forEach((product) => {
         content += `
             <div class="product">
                 <h2>${product._title}</h2>
@@ -36,6 +34,5 @@ function displayProducts(array : any) {
     });
     container.innerHTML = content;
 }
-
 let allProducts = LocalStorage.selectAllProduct();
 displayProducts(allProducts);

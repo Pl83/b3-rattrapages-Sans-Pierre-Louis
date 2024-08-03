@@ -1,4 +1,5 @@
-import IProduct from './Iproduct';
+import IProduct from './IProduct';
+import LocalStorage from './LocalStorage';
 
 class Product implements IProduct {
     
@@ -6,7 +7,12 @@ class Product implements IProduct {
         
     }
     createProduct(): void {
-        throw new Error('Method not implemented.');
+        try {
+            console.log('createProduct');
+            LocalStorage.createProduct(this);
+        } catch (e) {
+            console.error(e);
+        }
     }
     updateProduct(): void {
         throw new Error('Method not implemented.');
