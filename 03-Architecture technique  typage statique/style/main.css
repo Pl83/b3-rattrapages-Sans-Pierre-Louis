@@ -48,7 +48,7 @@ main #productsList .product div {
     justify-content: space-around;
     align-items: center;
     margin: 1em 0;
-}
+    gap: 1.5em;}
 
 main #productsList .product div ul {
     list-style: none;
