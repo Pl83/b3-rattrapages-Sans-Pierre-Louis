@@ -11,7 +11,7 @@ try {
         let product3 = new Product('product3', 'description3', 300, 30, 3, true, 'https://via.placeholder.com/200', new Date(), new Date());
         let product4 = new Product('product4', 'description4', 400, 0, 2, false, 'https://via.placeholder.com/200', new Date(), new Date());
         let product5 = new Product('product5', 'description5', 500, 50, 1, true, 'https://via.placeholder.com/200', new Date(), new Date());
-        let product6 = new Product('product6', 'description6', 600, 60, 5, true, 'https://via.placeholder.com/200', new Date(), new Date());
+        let product6 = new Product('product6', 'description6', 600, 0, 5, false, 'https://via.placeholder.com/200', new Date(), new Date());
         product1.createProduct();
         product2.createProduct();
         product3.createProduct();
@@ -23,10 +23,25 @@ try {
 catch (e) {
     console.error(e);
 }
+const overlay = document.querySelector('.overlay');
+const aside = document.querySelector('aside');
+const showForm = document.getElementById('showForm');
+overlay.addEventListener('click', (e) => {
+    aside.style.display = 'none';
+    overlay.style.display = 'none';
+});
+showForm.addEventListener('click', (e) => {
+    aside.style.display = 'block';
+    overlay.style.display = 'block';
+});
 function displayProducts(array) {
     const container = document.getElementById('productsList');
     let content = '';
     array.forEach((product) => {
+        let shortDate = product._added;
+        shortDate = shortDate.toString();
+        shortDate = shortDate.toString();
+        shortDate = shortDate.slice(0, 10);
         content += `
             <div class="product">
                 <h2>${product._title}</h2>
@@ -38,6 +53,7 @@ function displayProducts(array) {
                     <li>${product._rated}/5 ⭐</li>
                     <li class="peremption">Expire in:</li>
                     <li>About this product: ${product._description}</li>
+                    <li>Added on: ${shortDate}</li>
                 </ul>
                 </div>
             </div>
@@ -66,3 +82,29 @@ function displayProducts(array) {
 }
 let allProducts = LocalStorage.selectAllProduct();
 displayProducts(allProducts);
+function addProduct() {
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const price = parseInt(document.getElementById('price').value);
+    const stock = parseInt(document.getElementById('stock').value);
+    let available = false;
+    if (stock > 0) {
+        available = true;
+    }
+    ;
+    const rated = parseInt(document.getElementById('rated').value);
+    let expireElement = document.getElementById('expire');
+    let expire = expireElement ? expireElement.value : '';
+    console.log(expire);
+    expire = new Date(expire);
+    const image = document.getElementById('image').value;
+    const added = new Date();
+    let product = new Product(title, description, price, stock, rated, available, image, expire, added);
+    product.createProduct();
+    allProducts = LocalStorage.selectAllProduct();
+    displayProducts(allProducts);
+}
+const createProduct = document.getElementById('createProduct');
+createProduct.addEventListener('click', (e) => {
+    addProduct();
+});
