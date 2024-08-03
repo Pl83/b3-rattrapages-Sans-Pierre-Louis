@@ -1,7 +1,8 @@
 import LocalStorage from './LocalStorage.js';
 class Product {
-    constructor(_title, _description, _price, _stock, _rated, _available, _image, _expire, _added) {
+    constructor(_title, _slug, _description, _price, _stock, _rated, _available, _image, _expire, _added) {
         this._title = _title;
+        this._slug = _slug;
         this._description = _description;
         this._price = _price;
         this._stock = _stock;
@@ -24,10 +25,14 @@ class Product {
         throw new Error('Method not implemented.');
     }
     deleteProduct() {
-        throw new Error('Method not implemented.');
+        console.log('deleteProduct');
+        LocalStorage.delete(this);
     }
     get getTitle() {
         return this._title;
+    }
+    get getSlug() {
+        return this._slug;
     }
     get getDescription() {
         return this._description;

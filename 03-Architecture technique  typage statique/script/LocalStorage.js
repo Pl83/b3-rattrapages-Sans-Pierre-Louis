@@ -28,9 +28,9 @@ class LocalStorage {
     static delete(product) {
         let allProducts = localStorage.getItem('products') || '[]';
         allProducts = JSON.parse(allProducts);
-        allProducts = allProducts.filter((item) => item.getTitle !== product.getTitle);
+        allProducts = allProducts.filter((item) => item._title !== product._title);
         localStorage.setItem('products', JSON.stringify(allProducts));
-        return 'Product deleted' + product.getTitle;
+        return 'Product deleted' + product._title;
     }
     static update(product) {
         let allProducts = localStorage.getItem('products') || '[]';

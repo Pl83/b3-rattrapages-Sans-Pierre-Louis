@@ -3,7 +3,7 @@ import LocalStorage from './LocalStorage';
 
 class Product implements IProduct {
     
-    constructor(readonly _title: string, readonly _description: string, readonly _price: number, readonly _stock: number, readonly _rated: number, readonly _available: boolean, readonly _image: string, readonly _expire: Date, readonly _added: Date) {
+    constructor(readonly _title: string, readonly _slug: string, readonly _description: string, readonly _price: number, readonly _stock: number, readonly _rated: number, readonly _available: boolean, readonly _image: string, readonly _expire: Date, readonly _added: Date) {
         
     }
     createProduct(): void {
@@ -18,11 +18,16 @@ class Product implements IProduct {
         throw new Error('Method not implemented.');
     }
     deleteProduct(): void {
-        throw new Error('Method not implemented.');
+        console.log('deleteProduct');
+        LocalStorage.delete(this);
     }
 
     get getTitle(): string {
         return this._title;
+    }
+
+    get getSlug(): string {
+        return this._slug;
     }
 
     get getDescription(): string {

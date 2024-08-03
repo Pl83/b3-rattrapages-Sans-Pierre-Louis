@@ -1,6 +1,7 @@
 interface IProduct {
 
     _title: string;
+    _slug: string;
     _description: string;
     _price: number; 
     _stock: number;
