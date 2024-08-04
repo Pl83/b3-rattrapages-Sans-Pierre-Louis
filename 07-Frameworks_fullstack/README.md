@@ -1,8 +1,7 @@
 # 07 Frameworks fullstack
 
-<a href="https://youtu.be/QjjKPfRMlsA" target="_blank">Lien vers la vidéo 07 (part 1)</a>
-
-<a href="https://youtu.be/N6NUZcpkCJ0" target="_blank">Lien vers la vidéo 07 (part 2)</a>
+- <a href="https://youtu.be/QjjKPfRMlsA" target="_blank">Lien vers la vidéo 07 (part 1)</a>
+- <a href="https://youtu.be/N6NUZcpkCJ0" target="_blank">Lien vers la vidéo 07 (part 2)</a>
 
 
 ## prérequis

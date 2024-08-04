@@ -1,6 +1,6 @@
 # 15 - Budgétisation
 
-<a href="https://youtu.be/M3URdBULgSI" target="_blank">Lien vers la vidéo 15</a>
+- <a href="https://youtu.be/M3URdBULgSI" target="_blank">Lien vers la vidéo 15</a>
 
 ## Procedure d'instalation 
 

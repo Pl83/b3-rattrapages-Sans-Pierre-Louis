@@ -1,8 +1,7 @@
 # 03 – Architecture technique : typage statique
 
-<a href="https://youtu.be/Temt_C8eHzU" target="_blank">Lien vers la vidéo 03 (partie 1)</a>
-
-<a href="https://youtu.be/LGMnIxu3wKk" target="_blank">Lien vers la vidéo 03 (partie 2)</a>
+- <a href="https://youtu.be/Temt_C8eHzU" target="_blank">Lien vers la vidéo 03 (partie 1)</a>
+- <a href="https://youtu.be/LGMnIxu3wKk" target="_blank">Lien vers la vidéo 03 (partie 2)</a>
 
 
 ## Prérequis

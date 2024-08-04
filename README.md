@@ -4,22 +4,20 @@ Chaque exercices est bien accompagner d'une vidéo explicative. Le lien est pré
 
 ## Resources utiliser :
 
-<a href="https://laravel.com/docs/11.x/installation">Documentation Laravel</a>
-<a href="https://docs.google.com/presentation/d/1wvt-fIv7O5YtlviqcAAy4MxvIPfCkJuLUxupN3v5ACU/edit#slide=id.g2a1c5afb153_0_16">Cours Laravel</a>
-<a href="https://fr.vuejs.org/guide/introduction">Documentation Vue js</a>
-<a href="https://www.w3schools.com/">W3Schools</a>
-<a href="https://www.npmjs.com/">Npm</a>
-<a href="https://stackoverflow.com/">Stackoverflow</a>
-<a href="https://www.youtube.com/">Youtube</a>
-<a href="https://www.leonard-de-vinci.net/student/cours/">Les replays de cours</a>
+- <a href="https://laravel.com/docs/11.x/installation">Documentation Laravel</a>
+- <a href="https://docs.google.com/presentation/d/1wvt-fIv7O5YtlviqcAAy4MxvIPfCkJuLUxupN3v5ACU/edit#slide=id.g2a1c5afb153_0_16">Cours Laravel</a>
+- <a href="https://fr.vuejs.org/guide/introduction">Documentation Vue js</a>
+- <a href="https://www.w3schools.com/">W3Schools</a>
+- <a href="https://www.npmjs.com/">Npm</a>
+- <a href="https://stackoverflow.com/">Stackoverflow</a>
+- <a href="https://www.youtube.com/">Youtube</a>
+- <a href="https://www.leonard-de-vinci.net/student/cours/">Les replays de cours</a>
 
 ## 03 Architecture technique : Typage statique
 
-<a href="/03-Architecture technique  typage statique/">Lien vers l'exercice 03</a>
-
-<a href="https://youtu.be/Temt_C8eHzU" target="_blank">Lien vers la vidéo 03 (partie 1)</a>
-
-<a href="https://youtu.be/LGMnIxu3wKk" target="_blank">Lien vers la vidéo 03 (partie 2)</a>
+- <a href="/03-Architecture technique  typage statique/">Lien vers l'exercice 03</a>
+- <a href="https://youtu.be/Temt_C8eHzU" target="_blank">Lien vers la vidéo 03 (partie 1)</a>
+- <a href="https://youtu.be/LGMnIxu3wKk" target="_blank">Lien vers la vidéo 03 (partie 2)</a>
 
 ### Consignes :
 
@@ -60,11 +58,9 @@ Veillez à choisir pour chacune de ces informations le type de données le plus 
 
 ## 07 Frameworks fullstack
 
-<a href="/07-Frameworks_fullstack/">Lien vers l'exercice 07</a>
-
-<a href="https://youtu.be/QjjKPfRMlsA" target="_blank">Lien vers la vidéo 07 (part 1)</a>
-
-<a href="https://youtu.be/N6NUZcpkCJ0" target="_blank">Lien vers la vidéo 07 (part 2)</a>
+- <a href="/07-Frameworks_fullstack/">Lien vers l'exercice 07</a>
+- <a href="https://youtu.be/QjjKPfRMlsA" target="_blank">Lien vers la vidéo 07 (part 1)</a>
+- <a href="https://youtu.be/N6NUZcpkCJ0" target="_blank">Lien vers la vidéo 07 (part 2)</a>
 
 ### Consignes :
 
@@ -87,11 +83,9 @@ produits.
 
 ## 14 Framework front
 
-<a href="/14-Framework front/">Lien vers l'exercice 14</a>
-
-<a href="https://youtu.be/D0lci9vSPRg" target="_blank">Lien vers la vidéo 14 (partie 1)</a>
-
-<a href="https://youtu.be/fPpKb3eObek" target="_blank">Lien vers la vidéo 14 (partie 2)</a>
+- <a href="/14-Framework front/">Lien vers l'exercice 14</a>
+- <a href="https://youtu.be/D0lci9vSPRg" target="_blank">Lien vers la vidéo 14 (partie 1)</a>
+- <a href="https://youtu.be/fPpKb3eObek" target="_blank">Lien vers la vidéo 14 (partie 2)</a>
 
 ### Consignes :
 
@@ -108,9 +102,8 @@ Si vous devez faire les deux sujets, utilisez deux frameworks différents.
 
 ## 15 Budgétisation
 
-<a href="/15-Budgétisation/">Lien vers l'exercice 15</a>
-
-<a href="https://youtu.be/M3URdBULgSI" target="_blank">Lien vers la vidéo 15</a>
+- <a href="/15-Budgétisation/">Lien vers l'exercice 15</a>
+- <a href="https://youtu.be/M3URdBULgSI" target="_blank">Lien vers la vidéo 15</a>
 
 ### Consignes :
 
