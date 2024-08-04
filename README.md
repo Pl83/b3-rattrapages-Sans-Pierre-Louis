@@ -2,6 +2,17 @@
 
 Chaque exercices est bien accompagner d'une vidéo explicative. Le lien est présent dans le readme globale et dans chaque sous-readme.
 
+## Resources utiliser :
+
+<a href="https://laravel.com/docs/11.x/installation">Documentation Laravel</a>
+<a href="https://docs.google.com/presentation/d/1wvt-fIv7O5YtlviqcAAy4MxvIPfCkJuLUxupN3v5ACU/edit#slide=id.g2a1c5afb153_0_16">Cours Laravel</a>
+<a href="https://fr.vuejs.org/guide/introduction">Documentation Vue js</a>
+<a href="https://www.w3schools.com/">W3Schools</a>
+<a href="https://www.npmjs.com/">Npm</a>
+<a href="https://stackoverflow.com/">Stackoverflow</a>
+<a href="https://www.youtube.com/">Youtube</a>
+<a href="https://www.leonard-de-vinci.net/student/cours/">Les replays de cours</a>
+
 ## 03 Architecture technique : Typage statique
 
 <a href="/03-Architecture technique  typage statique/">Lien vers l'exercice 03</a>
