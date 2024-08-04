@@ -27,10 +27,12 @@ try {
 
 const overlay = (<HTMLInputElement>document.querySelector('.overlay'));
 const aside = (<HTMLInputElement>document.querySelector('aside'));
+const formStock = (<HTMLInputElement>document.querySelector('.formStock'));
 const showForm = (<HTMLInputElement>document.getElementById('showForm'));
 overlay.addEventListener('click', (e) => {
     aside.style.display = 'none';
     overlay.style.display = 'none';
+    formStock.style.display = 'none';
 });
 
 showForm.addEventListener('click', (e) => {
@@ -52,7 +54,10 @@ function displayProducts(array : any) {
                 <div>
                 <section>
                 <img src="${product._image}" alt="${product._title}" loading="lazy">
-                <button class="delete ${product._slug}">Delete</button>
+                <section>
+                    <button class="delete ${product._slug}">Delete</button>
+                    <button class="update ${product._slug}">Update</button>
+                </section>
                 </section>
                 <ul>
                     <li class="available"></li>
@@ -96,6 +101,32 @@ function displayProducts(array : any) {
             displayProducts(allProducts);
         });
     }
+
+    let updateButtons = (<HTMLCollection>document.getElementsByClassName("update"));
+    for (let i = 0; i < updateButtons.length; i++) {
+        updateButtons[i].addEventListener('click', (e) => {
+            let slug = updateButtons[i].classList[1];
+            let product = array.find((product:Product) => product._slug === slug);
+            let formStock = (<HTMLInputElement>document.querySelector('.formStock'));
+
+            overlay.style.display = 'block';
+            formStock.style.display = 'block';
+
+            let updetabtn = (<HTMLInputElement>document.getElementById('updateStock'));
+            let newStock = (<HTMLInputElement>document.getElementById('newStock'));
+
+            updetabtn.addEventListener('click', (e) => {
+                let newStockValue = parseInt(newStock.value);
+                product._stock = newStockValue;
+                LocalStorage.update(product);
+                allProducts = LocalStorage.selectAllProduct();
+                displayProducts(allProducts);
+                overlay.style.display = 'none';
+                formStock.style.display = 'none';
+            });
+        });
+    }
+
 }
 
 function addProduct() {

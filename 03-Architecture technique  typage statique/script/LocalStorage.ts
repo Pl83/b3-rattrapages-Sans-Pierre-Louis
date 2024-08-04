@@ -44,14 +44,17 @@ class LocalStorage {
     public static update(product:Product):string {
         let allProducts : any = localStorage.getItem('products') || '[]';
         allProducts = JSON.parse(allProducts);
-        allProducts = allProducts.map((item:Product) => {
-            if(item.getTitle === product.getTitle) {
-                return product;
-            }
-            return item;
-        });
+        let productToUpdate = allProducts.find((item:Product) => item._title === product._title);
+        allProducts = allProducts.filter((item:Product) => item._title !== product._title);
+        productToUpdate = product;
+        if (productToUpdate._stock > 0) {
+            productToUpdate._available = true;
+        } else {
+            productToUpdate._available = false;
+        }
+        allProducts.push(productToUpdate);
         localStorage.setItem('products', JSON.stringify(allProducts));
-        return 'Product updated' + product.getTitle;
+        return 'Product updated' + product._title; 
     }
 
 }

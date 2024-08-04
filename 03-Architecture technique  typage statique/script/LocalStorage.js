@@ -35,14 +35,18 @@ class LocalStorage {
     static update(product) {
         let allProducts = localStorage.getItem('products') || '[]';
         allProducts = JSON.parse(allProducts);
-        allProducts = allProducts.map((item) => {
-            if (item.getTitle === product.getTitle) {
-                return product;
-            }
-            return item;
-        });
+        let productToUpdate = allProducts.find((item) => item._title === product._title);
+        allProducts = allProducts.filter((item) => item._title !== product._title);
+        productToUpdate = product;
+        if (productToUpdate._stock > 0) {
+            productToUpdate._available = true;
+        }
+        else {
+            productToUpdate._available = false;
+        }
+        allProducts.push(productToUpdate);
         localStorage.setItem('products', JSON.stringify(allProducts));
-        return 'Product updated' + product.getTitle;
+        return 'Product updated' + product._title;
     }
 }
 export default LocalStorage;

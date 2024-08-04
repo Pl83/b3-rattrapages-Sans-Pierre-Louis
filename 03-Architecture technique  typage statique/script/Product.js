@@ -22,7 +22,8 @@ class Product {
         }
     }
     updateProduct() {
-        throw new Error('Method not implemented.');
+        console.log('updateProduct');
+        LocalStorage.update(this);
     }
     deleteProduct() {
         console.log('deleteProduct');

@@ -25,10 +25,12 @@ catch (e) {
 }
 const overlay = document.querySelector('.overlay');
 const aside = document.querySelector('aside');
+const formStock = document.querySelector('.formStock');
 const showForm = document.getElementById('showForm');
 overlay.addEventListener('click', (e) => {
     aside.style.display = 'none';
     overlay.style.display = 'none';
+    formStock.style.display = 'none';
 });
 showForm.addEventListener('click', (e) => {
     aside.style.display = 'block';
@@ -48,7 +50,10 @@ function displayProducts(array) {
                 <div>
                 <section>
                 <img src="${product._image}" alt="${product._title}" loading="lazy">
-                <button class="delete ${product._slug}">Delete</button>
+                <section>
+                    <button class="delete ${product._slug}">Delete</button>
+                    <button class="update ${product._slug}">Update</button>
+                </section>
                 </section>
                 <ul>
                     <li class="available"></li>
@@ -91,6 +96,27 @@ function displayProducts(array) {
             LocalStorage.delete(product);
             allProducts = LocalStorage.selectAllProduct();
             displayProducts(allProducts);
+        });
+    }
+    let updateButtons = document.getElementsByClassName("update");
+    for (let i = 0; i < updateButtons.length; i++) {
+        updateButtons[i].addEventListener('click', (e) => {
+            let slug = updateButtons[i].classList[1];
+            let product = array.find((product) => product._slug === slug);
+            let formStock = document.querySelector('.formStock');
+            overlay.style.display = 'block';
+            formStock.style.display = 'block';
+            let updetabtn = document.getElementById('updateStock');
+            let newStock = document.getElementById('newStock');
+            updetabtn.addEventListener('click', (e) => {
+                let newStockValue = parseInt(newStock.value);
+                product._stock = newStockValue;
+                LocalStorage.update(product);
+                allProducts = LocalStorage.selectAllProduct();
+                displayProducts(allProducts);
+                overlay.style.display = 'none';
+                formStock.style.display = 'none';
+            });
         });
     }
 }

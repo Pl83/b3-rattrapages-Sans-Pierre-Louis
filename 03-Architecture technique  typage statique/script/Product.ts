@@ -15,7 +15,8 @@ class Product implements IProduct {
         }
     }
     updateProduct(): void {
-        throw new Error('Method not implemented.');
+        console.log('updateProduct');
+        LocalStorage.update(this);
     }
     deleteProduct(): void {
         console.log('deleteProduct');
