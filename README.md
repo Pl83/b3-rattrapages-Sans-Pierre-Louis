@@ -6,7 +6,8 @@ Chaque exercices est bien accompagner d'une vidéo explicative. Le lien est pré
 
 <a href="/03-Architecture technique  typage statique/">Lien vers l'exercice 03</a>
 
-<a href="" target="_blank">Lien vers la vidéo 03</a>
+<a href="https://youtu.be/Temt_C8eHzU" target="_blank">Lien vers la vidéo 03 partie 1</a>
+<a href="https://youtu.be/LGMnIxu3wKk" target="_blank">Lien vers la vidéo 03 partie 2</a>
 
 ### Consignes :
 
@@ -49,7 +50,8 @@ Veillez à choisir pour chacune de ces informations le type de données le plus 
 
 <a href="/07-Frameworks_fullstack/">Lien vers l'exercice 07</a>
 
-<a href="" target="_blank">Lien vers la vidéo 07</a>
+<a href="https://youtu.be/QjjKPfRMlsA" target="_blank">Lien vers la vidéo 07 part 1</a>
+<a href="https://youtu.be/N6NUZcpkCJ0" target="_blank">Lien vers la vidéo 07 part 2</a>
 
 ### Consignes :
 
