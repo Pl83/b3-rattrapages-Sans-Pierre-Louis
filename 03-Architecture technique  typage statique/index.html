@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script/app.js" defer type="module"></script>
+    <link rel="stylesheet" href="style/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Picard</h1>
+    </header>
+    <main>
+        <button id="showForm">Add a product to the list</button>
+        <section id="productsList">
+
+        </section>
+    </main>
+    <div class="overlay"></div>
+    <div class="formStock">
+        <form>
+            <label for="stock">Set new stock to : </label>
+            <input type="number" id="newStock" name="stock">
+            <button type="button" id="updateStock">Update</button>
+        </form>
+    </div>
+    <aside>
+        <div>
+            <fieldset>
+                <legend>Create a product</legend>
+                <form>
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" name="title">
+    
+                    <label for="description">Description: </label>
+                    <textarea id="description" name="description"></textarea>
+    
+                    <label for="price">Price: </label>
+                    <input type="number" id="price" name="price">
+    
+                    <label for="stock">Stock: </label>
+                    <input type="number" id="stock" name="stock">
+    
+                    <label for="image">Image link: </label>
+                    <input type="text" id="image" name="image">
+    
+                    <label for="rated">Rated: </label>
+                    <select id="rated" name="rated">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+    
+                    <label for="expirationDate">Expiration date: </label>
+                    <input type="date" id="expirationDate" name="expirationDate">
+    
+                    <button type="submit" id="createProduct">Create</button>
+    
+                </form>
+            </fieldset>
+        </div>
+    </aside>
+</body>
+</html>
